@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# v1
+# Generated on 2026-11-25 14:18:23.762665
+
+CACHE:
+image.webp
+psfree_lapse_shared.js
+505exploit.js
+672entrypoint.js
+672kexploit.js
+cache.html
+lapse_setup.js
+lapse_exploit.js
+main.js
+index.html
+payload.bin
+psfree.js
+
+NETWORK:
+*

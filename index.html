@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJZA ALHASB JAILBREAK 0558028009</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('image.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100% 100%;
+    overflow: hidden;
+    background-color: #252526;
+    color: rgb(9, 9, 9);
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    text-align: center;
+    font-size: 15px;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  #console {
+    font-family: monospace;
+    background-color: #00000052;
+    color: #cccccc;
+    border: 1px solid #3c3c3c;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    text-align: left;
+  }
+  #jailbreakBtn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #252526;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #jailbreakBtn:disabled {
+    background: #555555;
+    color: #aaaaaa;
+    cursor: not-allowed;
+  }
+  #jailbreakBtn:not(:disabled):hover {
+    background: #252526;
+  }
+  footer {
+    margin-top: 30px;
+    font-size: 15px;
+    color: #f3eeee;
+  }
+  /* الحاوية الرئيسية لتثبيت العناصر في أعلى المنتصف */
+  .loader-wrapper {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    text-align: center;
+    font-family: sans-serif;
+    direction: rtl;
+    width: 90%;
+  }
+  /* التنسيق العام لرسالة النتيجة */
+  .result-message {
+    font-size: 25px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  /* تنسيق خاص في حال النجاح (أخضر) */
+  .result-message.success {
+    color: #159c68;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* تنسيق خاص في حال الفشل (أحمر) */
+  .result-message.fail {
+    color: #890404;
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+<script>
+  if (window.applicationCache && window.applicationCache.status === 0) {
+    window.location.replace("cache.html");
+  }
+</script>
+</head>
+<body>
+  <div class="head">
+    <h1><img src="data:img/png;base64, iVBORw0KGgoAAAANSUhEUgAAAJoAAAAiCAYAAACnZsAPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA7xJREFUeNrsnO2R2jAQhkWGApwOfB04FWAqOKeCgwpyrgCogLsKzqkgpAL7KsAdxFQQd0DkmdXMoshgy1ojYN+Z/XE/MLL87Kd8TI7Ho2CxqPWFt4B1K6DFYCwWOWi5tCYH76VtGTwWdeqMpL0CeH+l/ZK2kBbwVjNoVGrgSqR9IOg40jFo5Eog0uUQ+VgMmjPV0ipDTbeHlMpi0JxoKe2bATYBKTXhR/AYmo4Q0RorWiJY06HuiL6buh4s4d5cKQSz2eOSeA8L30FTOpzZ3IQItnyE+8qkpQOBi8SwkVADwZwAsC2qpTfS1rfSDLRpRhhNqbUAoG3HNyF83pduPICSRm/YBj8jH0Cj6kC/SpsQWGpYv21js9IgrSE69VmPq2jWzD//UDVpfNbZX2+QMrGeLa+lN0MbF/WQhaPnkCoV9BWD5ocODlOV3mCMmSYbuPZa0f8k7eetdZ0sP7XQIliTspeEEwAvIlp1gw/q5QqNh6sRSg4Ff4BKgSdKyHyJaJ8j1SGBowf1Iv6fd717DlgAxf5KG4ukY6Xra4NWGgpr1x78QTw+uEYB37fh2CLnqGHNb2MuYjpSlKjgBgMNsjmxF+fCbtrexUFKKJp9hczkZJkYPmAeBbRm8T/AS0LwjC7KwGLkVdQhe2GAbEkcQX3RGp5TgBwjvaZTTDvClUBtEg2ILjF8foauG4rTM8NP+Ltw4HXPLbDfs2KIYldNk31ACxBcQ+ub/QVAI22jlHaQmmy7If07D3cMWAh1WKLtX+pLVz81LHgluh1DqMgT93zg+ligbAEtASssa7lHeX1cT5MVlAhe1Y4YtC20wJeK+h2085UBji6q4Rq/tWgVthTvMVhxZ4AkLfvbt9mJDNdYaaMMmwipB4tcCzKpBrt+Dxl8rrFsii70egaMDNJYadl1noOrS/1X3RlkgQGEqud9hi17FhOt99x1CwhUKUrjO4i0IQatNowflOYIsAiB0bXrVEcbtUX9p9KAz6Cp98mGjoZSixHLd0Hz9stMezaVOD3/rAyg1VoplcDaapw61QPdGsLmfuCiMzRueBbdXt8u4MayG4lOQ6JIDZDZND07QXN0tDaAtu65ri1Knyc1mlp0AkDEws2wU/1vQNDBQ1WX6SKCpdp3Up3lVaL7PNHkUD7WnoVF6VIix1HHiu+QPsXkwo+8BCg0x4aFFEB6W+E5F+dfqa7QGKMUrLvVpYFtrUHlQjXqXBmuB9HE0c9WtXWPOKJlhq6TxaANgi6GOm8D4OGuk8WgsVg0+ifAAKDN9R9G9U6hAAAAAElFTkSuQmCC" alt=""></h1>
+  </div>
+
+  <button id="jailbreakBtn">Start Jailbreak</button>
+
+  <pre id="console"></pre>
+
+  <div class="loader-wrapper">
+    <!-- حاوية النتيجة -->
+    <div id="loading-result" class="result-message"></div>
+  </div>
+
+  <footer>
+    AJZA ALHASB <strong>0558028009</strong>
+  </footer>
+
+  <script>
+    // 6.72 JB globals
+    window.entrypoint672_result = 0;
+    window.exploitsetup672_result = 0;
+
+    // Device FW version holder
+    var config_target = 0x0000;
+
+    // Logging utility
+    var outputConsole = document.getElementById("console");
+    window.log = function (msg, color) {
+      if (color === undefined) color = "#cccccc";
+      outputConsole.innerHTML += '<span style="color:' + color + '">' + msg + '</span><br>';
+    };
+
+    // Get Script for ES5 JavaScript
+    window.getScriptES5 = function (source, callback) {
+      var gs = document.createElement('script');
+      gs.src = source;
+      gs.onload = callback;
+      gs.async = false;
+      document.body.appendChild(gs);
+    };
+
+    // Event definitions
+    window.addEventListener('error', function (event) {
+      var reason = event.error;
+      var msg = 'Unhandled error\n';
+      if (reason) {
+        msg += reason + '\n';
+        if (reason.sourceURL)
+          msg += reason.sourceURL;
+        if (reason.line)
+          msg += ':' + reason.line;
+        if (reason.column)
+          msg += ':' + reason.column;
+        if (reason.stack)
+          msg += '\n' + reason.stack;
+      } else {
+        msg += 'No error object';
+      }
+      alert(msg);
+      return true;
+    });
+
+    // Dynamic 6.72 entrypoint loader
+    window.addEventListener('load', function () {
+      var ua = navigator.userAgent;
+      var isPS4 = ua.indexOf("PlayStation 4") !== -1;
+      var is67x = ((ua.indexOf(" 6.70") !== -1) || (ua.indexOf(" 6.71") !== -1) || (ua.indexOf(" 6.72") !== -1));
+      if (isPS4 && is67x && (window.applicationCache.status !== 0)) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '672entrypoint.js', false);
+        xhr.send('');
+        if (xhr.status === 200)
+          eval.call(top.window, xhr.responseText);
+      }
+    });
+
+    window.checkPlatformIsSupported = function () {
+      var userAgent = navigator.userAgent;
+      var psRegex = /PlayStation (4|5)[ \/]([0-9]{1,2}\.[0-9]{2})/;
+      var match = userAgent.match(psRegex);
+      if (!match) return false;
+      var device = match[1];    // "4" or "5"
+      var fwVersion = match[2]; // "9.00", "9.03", etc.
+      // Convert "9.00" to 0x900
+      config_target = parseInt(fwVersion.replace('.', ''), 16);
+      window.log("Detected FW: PS" + device + " v" + fwVersion + ", PS4JB Version: v1.03b\n");
+      // Supported FW lists
+      var supportedFW = {
+        "4": ["5.05", "6.70", "6.71", "6.72",
+              "7.00", "7.01", "7.02", "7.50", "7.51", "7.55",
+              "8.00", "8.01", "8.03", "8.50", "8.52",
+              "9.00", "9.03", "9.04", "9.50", "9.51", "9.60"],
+        "5": ["0.00"]
+      };
+      // Check device exists
+      if (!supportedFW[device]) return false;
+      // FW control
+      return supportedFW[device].indexOf(fwVersion) !== -1;
+    };
+
+    // Button click
+    document.getElementById("jailbreakBtn").addEventListener("click", function () {
+      // Disable to prevent double click
+      document.getElementById("jailbreakBtn").disabled = true;
+      outputConsole.textContent = ""; // Clear console log
+
+      try {
+        if (!window.checkPlatformIsSupported()) {
+          window.log("Unsupported platform detected! Designed for PS4 5.05, 6.70, 6.71, 6.72, [7.00-9.60]", "red");
+        } else {
+          if (config_target === 0x505) { // 5.05
+            window.log("Starting 5.05 Exploit...");
+            window.getScriptES5('505exploit.js', function () { setTimeout(exploit505, 1000); });
+          } else {
+            window.getScriptES5('main.js', function () { setTimeout(doJailBreak, 500); });
+          }
+        }
+      } catch (error) {
+        window.log("An error occured during exploit: " + error, "red");
+      }
+    });
+
+    // مراقب رسائل النجاح والفشل
+    (function() {
+      var resultElement = document.getElementById("loading-result");
+      var isFinished = false;
+
+      // دالة إظهار الفشل
+      function triggerFailure() {
+        if (isFinished) return;
+        isFinished = true;
+        resultElement.textContent = "فشل تفعيل جولد هين! أعد تشغيل البلايستيشن وحاول مرة أخرى";
+        resultElement.classList.add("fail");
+        observer.disconnect();
+      }
+
+      // دالة إظهار النجاح اللحظي
+      function triggerSuccess() {
+        if (isFinished) return;
+        isFinished = true;
+        resultElement.textContent = "تم تفعيل جولد هين بنجاح...يمكنك الآن إغلاق المتصفح";
+        resultElement.classList.add("success");
+        observer.disconnect();
+      }
+
+      // دالة لفحص محتوى الصفحة والبحث عن الكلمات المفتاحية
+      function checkPageText() {
+        if (isFinished || !document.body) return false;
+        var pageText = (document.body.innerText || document.body.textContent || "").toLowerCase();
+
+        // الفحص عن الفشل بكلمة "restart"
+        if (pageText.indexOf("restart") !== -1) {
+          triggerFailure();
+          return true;
+        }
+
+        // الفحص عن النجاح بالكلمة الجديدة "loaded"
+        if (pageText.indexOf("loaded") !== -1) {
+          triggerSuccess();
+          return true;
+        }
+
+        return false;
+      }
+
+      // مراقبة الصفحة لحظياً فور حدوث أي تغيير في النصوص
+      var observer = new MutationObserver(function() {
+        checkPageText();
+      });
+
+      // بدء مراقبة التغييرات
+      if (document.body) {
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true,
+          characterData: true
+        });
+        checkPageText();
+      }
+    })();
+  </script>
+</body>
+</html>
